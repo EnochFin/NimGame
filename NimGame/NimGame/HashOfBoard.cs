@@ -8,10 +8,10 @@ namespace NimGame
 {
     class HashOfBoards
     {
-        private class meanOcc
+        public class meanOcc
         {
             double mean;
-            double occ;
+            int occ;
 
             public meanOcc(double mean, int occ)
             {
@@ -23,8 +23,17 @@ namespace NimGame
             {
                 return ("{" + this.mean + "," + this.occ + "}");
             }
+            public double getMean()
+            {
+                return this.mean;
+            }
         }
         Dictionary<Board, meanOcc> boards = new Dictionary<Board, meanOcc>();
+
+        public Dictionary<Board, meanOcc> getBoards()
+        {
+            return boards;
+        }
 
         public HashOfBoards()
         {

@@ -11,8 +11,12 @@ namespace NimGame
         static void Main(string[] args)
         {
             HashOfBoards hob = new HashOfBoards();
+            Board testBoard = new Board(1, 2, 3);
             System.Console.WriteLine(hob.ToString());
-            System.Console.WriteLine(new Board(1, 2, 3).ToString());
+            foreach (Board b in Control.getPossibleMoves(testBoard, hob.getBoards()))
+            {
+                System.Console.WriteLine(b.ToString());
+            }
         }
     }
 }
